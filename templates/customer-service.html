@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+     Customer Service
+    {% endblock %}
+{% load static %}
+
+{% block body %}
+    {#    breadcrumbs starts here#}
+
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: grey">Home</a></li>
+    <li class="breadcrumb-item active"><a href="contact" style="text-decoration: none; color: grey">Contact Us</a></li>
+      <li class="breadcrumb-item active" aria-current="page" style="color: #f45721">Customer Service</li>
+  </ol>
+</nav>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <body style="background-color: #eeeeee">
+    <div class="cont">
+        <img style="position: relative; max-width: 100%" src="{% static 'img/customer-service-banner.jpg' %}" alt="image">
+        <h1 style="position: absolute; left: 70px; top: 250px; color: grey; font-size: 70px">Customer Service</h1>
+    </div>
+
+{#    customer service#}
+    <div class="cust-serv" style="margin-top: 80px; margin-bottom: 80px ; margin-left: 200px">
+       <h1 style="font-weight: bold">Let's talk</h1>
+        <p style="color: grey; margin-top: 20px; font-size: large">We have the best service centre to provide you <br> best of customer service experience.
+            Call our helpline number <br> and we will ensure best service at your doorstep!</p>
+        <h2 style="margin-top: 20px; font-size: x-large; font-weight: bold">Helpline Number: +91 87089-xxxxx </h2><br>
+        <h2 style="margin-top: 20px; font-size: x-large; font-weight: bold">Mail ID:  ...</h2>
+        <hr style="border-top: 2px solid #f45721">
+        <br>
+        <h2 style="margin-top: 20px; font-size: x-large; font-weight: bold">OR REGISTER A SERVICE REQUEST</h2><br>
+        <a href="query-form" role="button" class="btn btn-secondary" style="background-color: #f45721; border-color: #f45721">Click Here!</a>
+
+   </div>
+   </body>
+    {% endblock %}

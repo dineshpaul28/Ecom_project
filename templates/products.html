@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+    Products
+{% endblock %}
+
+{% block body %}
+{% load static %}
+    <style>
+    body{
+        background-color: #eeeeee;
+    }
+    </style>
+    {#    breadcrumbs starts here#}
+
+     <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: grey">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #f45721">Products</li>
+        </ol>
+    </nav>
+
+    <img src="{% static 'img/products.jpg' %}" alt="img">
+
+<h1 style="color: #f45721; text-align: center; margin-top: 70px; margin-bottom: 70px">COLLECTIONS</h1>
+{#   owl carousel starts here#}
+
+{#    <div class="owl-carousel owl-theme">#}
+{#             {% for i in prod %}#}
+{#    <div class="card item" style="width: 18rem">#}
+{#  <img class="card-img-top" src="media/{{ i.prod_image }}" alt="Card image cap">#}
+{#  <div class="card-body">#}
+{#    <h5 class="card-title">{{ i.prod_name }}</h5>#}
+{#    <p class="card-text">{{ i.prod_desc }}</p>#}
+{#    <a href="{% url 'show' i.pk %}" class="btn btn-primary" style="background-color: #f45721; border-color: #f45721">View</a>#}
+{#  </div>#}
+{#</div>#}
+{#    {% endfor %}#}
+{#    </div>#}
+
+
+{#    HOME APPLIANCES#}
+
+    <div class="card" style="width: 18rem; margin-left: 50px">
+  <img src="{% static 'img/ceiling-fan-icon.png' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Fans</h5>
+    <p class="card-text">Some home appliances</p>
+    <a href="sunlight-fans/fan" class="btn btn-primary" style="background-color: #f45721; border-color: #f45721">view</a>
+  </div>
+</div>
+
+{#    <script>#}
+{#    $('.owl-carousel').owlCarousel({#}
+{#        center: true,#}
+{#        loop:true,#}
+{#        margin:10,#}
+{#        nav:false,#}
+{#        responsive:{#}
+{#            0:{#}
+{#                items:1#}
+{#            },#}
+{#            600:{#}
+{#                items:3#}
+{#            },#}
+{#            1000:{#}
+{#                items:4#}
+{#            }#}
+{#        }#}
+{#    })#}
+{##}
+{#    </script>#}
+
+
+
+{% endblock %}

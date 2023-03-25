@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Cooler
+
+{% endblock %}
+
+{% block body %}
+{% load static %}
+    <style>
+    body{
+        background-color: #eeeeee;
+    }
+    </style>
+
+    {#breadcrumb starts here    #}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: grey">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #f45721">Cooler</li>
+        </ol>
+    </nav>
+
+    <img src="{% static 'img/cooler-banner.jpg' %}" alt="banner">
+
+<h1 style="font-family: 'Chalkboard SE'; text-align: center">Cooler</h1>
+    <p style="text-align: center; font-family: 'Chalkboard SE'; color: grey">To meet the rising expectations of the Indian Market, these are crafted for <br>
+        cooling comfort with modern aesthetics. These coolers have honeycomb pads and 4-way air deflection. <br>
+        The Everlast Pump is less prone to jamming even with high TSD level of water.</p>
+
+{#    TO SHOW THE PRODUCT#}
+    {% for i in prod %}
+    <div class="card" style="width: 576px; height: 540px; display: inline-block; margin-left: 100px; margin-top: 30px">
+  <img class="card-img-top" src="/media/{{ i.prod_image }}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title" style="font-family: 'Chalkboard SE'">{{ i.prod_name}}</h3>
+    <a href="{% url 'show' i.pk %}" class="led-card" style="font-family: 'Chalkboard SE'; text-decoration: none">View ></a>
+
+
+  </div>
+</div>
+    {% endfor %}
+{% endblock %}

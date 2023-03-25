@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+     Sunlight Fans
+{% endblock %}
+
+{% block body %}
+    {% load static %}
+
+    <style>
+    body{
+        background-color: #eeeeee;
+    }
+    </style>
+
+    {#breadcrumb starts here    #}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: grey">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #f45721">Fans</li>
+        </ol>
+    </nav>
+
+{#    carousal starts her #}
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{% static 'img/Fans_Inner_Banner.gif' %}" alt="First slide">
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+{#    to show the product#}
+
+     {% for i in prod %}
+    <div class="card" style="width: 576px; height: 540px; display: inline-block; margin-left: 100px; margin-top: 30px">
+  <img class="card-img-top" src="/media/{{ i.prod_image }}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title" style="font-family: 'Chalkboard SE'">{{ i.prod_name}}</h3>
+    <a href="{% url 'show' i.pk %}" class="led-card" style="font-family: 'Chalkboard SE'; text-decoration: none">View ></a>
+
+  </div>
+</div>
+    {% endfor %}
+
+    {% endblock %}

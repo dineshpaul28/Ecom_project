@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+    Inverter/Batteries
+{% endblock %}
+
+{% block body %}
+
+    <style>
+    body{
+        background-color: #eeeeee;
+    }
+    </style>
+
+    {#breadcrumb starts here    #}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: grey">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #f45721">Inverter/Batteries</li>
+        </ol>
+    </nav>
+
+ <h1>This is a testing page</h1>
+    {#    to show the product#}
+
+     {% for i in prod %}
+    <div class="card" style="width: 576px; height: 540px; display: inline-block; margin-left: 100px; margin-top: 30px">
+  <img class="card-img-top" src="/media/{{ i.prod_image }}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title" style="font-family: 'Chalkboard SE'">{{ i.prod_name}}</h3>
+    <a href="{% url 'show' i.pk %}" class="led-card" style="font-family: 'Chalkboard SE'; text-decoration: none">View ></a>
+
+  </div>
+</div>
+    {% endfor %}
+{% endblock %}

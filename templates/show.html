@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    show
+    {% endblock %}
+{% load static %}
+{% block body %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+
+
+    <div style="display: flex">
+    <img class="prod-image" src="/media/{{ prod.prod_image }}" width="400" height="400" style="position: relative" alt="image">
+    <ul style="display: inline-block">
+        <li>
+            <h2 style="font-family: 'Chalkboard SE'">Specification</h2>
+            <p>{{ prod.prod_desc }}</p>
+        <button type="button" class="btn btn-primary" style="background-color: #f45721; border-color: #f45721">Add Cart</button>
+            <hr>
+            <strong>MRP</strong>: {{ prod.prod_price }}
+            <hr>
+            {% if prod.pk == 4 %}
+                <strong>Wattage</strong>: 9w
+                <hr>
+                <strong>Color</strong>: white, multiple
+                <hr>
+                <strong>Shape</strong>: oval
+                <hr>
+                    <strong>Type of bulb</strong>: LED
+            {% endif %}
+
+        {% if prod.pk == 3 %}
+            <strong>Wattage</strong>: 15w
+            <hr>
+            <strong>Color</strong>: White, multiple
+            <hr>
+            <strong>Shape</strong>: Tube
+            <hr>
+            <strong>Type of tube light</strong>: LED
+        {% endif %}
+        </li>
+        </ul>
+    </div>
+
+
+    {% endblock %}

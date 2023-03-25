@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Contact Us
+    {% endblock %}
+
+{% load static %}
+{% block body %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{#    breadcrumbs starts here#}
+
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: grey">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page" style="color: #f45721">Contact Us</li>
+  </ol>
+</nav>
+
+
+    <body style="background-color: #eeeeee">
+
+    <img src="{% static 'img/contact-us.jpg' %}" alt="" style="width: 100%; height: 600px">
+
+{#    cards#}
+    <ul style="display: flex; justify-content: center">
+      <li style="display: inline-block ">
+
+            <div class="card-box"><i>
+                <img src="{% static 'img/contact-icon01.png' %}" alt="" style="margin-left: 80px; margin-top: 30px">
+                <h6 style="margin-left: 80px; margin-top: 20px"><strong>Store Locator</strong></h6>
+                <a class="btn btn-primary" href="store_locator" role="button">Explore</a>
+
+            </i></div>
+
+
+        </li>
+
+{#    2nd card#}
+
+    <li style="display: inline-block ">
+
+            <div class="card-box"><i>
+                <img src="{% static 'img/contact-icon02.png' %}" alt="" style="margin-left: 80px; margin-top: 30px">
+                <h6 style="margin-left: 60px; margin-top: 20px"><strong>Customer Service</strong></h6>
+               <a class="btn btn-primary" href="customer_service" role="button">Explore</a>
+
+            </i></div>
+
+
+        </li>
+
+{#    3rd card#}
+
+    <li style="display: inline-block ">
+            <div class="card-box"><i>
+                <img src="{% static 'img/contact-icon04.png' %}" alt="" style="margin-left: 80px; margin-top: 30px">
+                <h6 style="margin-left: 50px; margin-top: 20px"><strong>Corporate Enquiry</strong></h6>
+                <a class="btn btn-primary" href="#" role="button">Explore</a>
+            </i></div>
+
+        </li>
+    </ul>
+
+{#    enquiry box#}
+   <div class="enq-box">
+       <h2 style="margin-top: 50px; margin-left: 30px"><b>Quick Contact</b></h2>
+        <h5 style="color: #f45721; margin-top: 30px; margin-left: 600px">Call us at:<br> +91 8708982816</h5>
+   </div>
+    </body>
+    {% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    LED Bulb
+{% endblock %}
+
+{% load static %}
+{% block body %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <style>
+        body {
+            background-color: #eeeeee;
+        }
+    </style>
+
+    {#breadcrumb starts here    #}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" style="text-decoration: none; color: grey">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page" style="color: #f45721">LED Bulb</li>
+        </ol>
+    </nav>
+
+    {#    label image #}
+    <img style="position: relative" src="{% static 'img/banner-1.jpg' %}" alt="image">
+    <h3 style="position: absolute; left:150px; top: 300px; color: #f45721">#PowerGoneLightOn</h3>
+    <h1 style="position: absolute; left: 150px; top: 350px; color: white">Rechargeable LED bulb</h1>
+
+
+    <h1 style="font-family: 'Chalkboard SE'; text-align: center; margin-top: 20px">Application</h1>
+
+    <ul style="display: flex; justify-content: center">
+    <li style="display: inline-block">
+        <div style="margin-top: 20px"><i>
+            <img src="{% static 'img/application-img-1.jpg' %}" alt="img">
+                {#                <img src="{% static 'img/trending_miracle_diva.png' %}" alt="">#}
+            </i></div>
+            <h4 style="margin-top: 20px; text-align: center; font-family: 'Chalkboard SE'">Shops</h4>
+    </li>
+
+    <li style="display: inline-block">
+        <div style="margin-top: 20px; margin-left: 30px"><i>
+            <img src="{% static 'img/application-img-2.jpg' %}" alt="img">
+                {#                <img src="{% static 'img/trending_miracle_diva.png' %}" alt="">#}
+            </i></div>
+            <h4 style="margin-top: 20px; text-align: center; font-family: 'Chalkboard SE'">Park</h4>
+    </li>
+
+    <li style="display: inline-block">
+        <div style="margin-top: 20px; margin-left: 30px"><i>
+            <img src="{% static 'img/application-img-3.jpg' %}" alt="img">
+                {#                <img src="{% static 'img/trending_miracle_diva.png' %}" alt="">#}
+            </i></div>
+            <h4 style="margin-top: 20px; text-align: center; font-family: 'Chalkboard SE'">Street Vendor</h4>
+    </li>
+
+    <li style="display: inline-block">
+        <div style="margin-top: 20px; margin-left: 30px"><i>
+            <img src="{% static 'img/application-img-4.jpg' %}" alt="img">
+                {#                <img src="{% static 'img/trending_miracle_diva.png' %}" alt="">#}
+            </i></div>
+            <h4 style="margin-top: 20px; text-align: center; font-family: 'Chalkboard SE'">Residence</h4>
+    </li>
+    </ul><br>
+
+    <h2 style="font-family: 'Chalkboard SE'; text-align: center">Lighting</h2><br>
+    <p style="text-align: center; font-family: 'Chalkboard SE'; color: grey">Our innovative range of lighting solutions let you create the perfect ambience <br> at home. Our products are energy efficient and provide superior light output
+        <br> making homes more comfortable.</p>
+
+{#cards starts here#}
+    {% for i in prod %}
+    <div class="card" style="width: 576px; height: 540px; display: inline-block; margin-left: 100px; margin-top: 30px">
+  <img class="card-img-top" src="/media/{{ i.prod_image }}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title" style="font-family: 'Chalkboard SE'">{{ i.prod_name}}</h3>
+    <a href="{% url 'show' i.pk %}" class="led-card" style="font-family: 'Chalkboard SE'; text-decoration: none">View ></a>
+
+  </div>
+</div>
+    {% endfor %}
+{% endblock %}

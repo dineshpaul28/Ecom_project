@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    search
+    {% endblock %}
+
+{% load static %}
+
+{% block body %}
+
+    <h4 style="margin-left: 40px">Search results for : <strong> {{ prod_name }}</strong></h4>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     {#    cards starts here#}
+    {% if product.count == 0 %}
+        {% include 'nothing.html' %}
+        {% else %}
+    {% for i in product %}
+        <label for="cards"></label>
+ <div class="card" id="cards">
+  <img class="card-img-top" src="/media/{{ i.prod_image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ i.prod_name }}</h5>
+      <h5>{{ i.prod_price }}</h5>
+    <p class="card-text">{{ i.prod_desc }}</p>
+    <a href="{% url 'show' i.pk %}" class="btn btn-outline-danger">view</a>
+  </div>
+</div>
+    {% endfor %}
+    {% endif %}
+    {% endblock %}
